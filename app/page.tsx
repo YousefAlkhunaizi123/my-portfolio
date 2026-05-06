@@ -22,6 +22,31 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#050505] text-white">
+      <nav className="fixed top-0 left-0 w-full border-b border-zinc-900 bg-black/70 backdrop-blur-xl">
+  <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-5">
+    
+    <h1 className="text-lg font-semibold tracking-wide">
+      Yousef
+    </h1>
+
+    <div className="flex gap-8 text-sm text-zinc-400">
+      <a href="#projects" className="hover:text-white transition">
+        Projects
+      </a>
+
+      <a href="/experience" className="hover:text-white transition">
+        Experience
+      </a>
+
+      <a
+        href="mailto:yalkhunaizi@ucsd.edu"
+        className="hover:text-white transition"
+      >
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>
       <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-8 py-20">
         <p className="mb-4 text-sm uppercase tracking-[0.35em] text-zinc-500">
           Portfolio
