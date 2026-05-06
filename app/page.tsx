@@ -1,84 +1,92 @@
 export default function Home() {
+  const projects = [
+    {
+      icon: "⚡",
+      title: "Fall Detection Device",
+      description:
+        "A wearable system using ESP32 and MPU6050 sensors to detect abnormal movement and possible falls.",
+    },
+    {
+      icon: "🤖",
+      title: "Line-Following Robot",
+      description:
+        "A robot designed with sensors, motor control logic, and a 3D-printed chassis for stable line tracking.",
+    },
+    {
+      icon: "🔬",
+      title: "Capacitor Research",
+      description:
+        "Comb-shaped capacitor layouts designed and printed using the Voltera printer at UCSD Armor Lab.",
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center font-sans">
-      <main className="max-w-4xl px-8">
-        <h1 className="text-6xl font-bold mb-6">
-          Hi, I'm Yousef
-        </h1>
-
-        <h2 className="text-2xl text-zinc-400 mb-8">
-          Electrical Engineering Student @ UCSD
-        </h2>
-
-        <p className="text-lg text-zinc-300 leading-8 max-w-2xl mb-10">
-          I am interested in machine learning, embedded systems,
-          hardware design, and building engineering projects
-          that combine circuits, software, and design.
+    <main className="min-h-screen bg-[#050505] text-white">
+      <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-8 py-20">
+        <p className="mb-4 text-sm uppercase tracking-[0.35em] text-zinc-500">
+          Portfolio
         </p>
 
-        <div className="flex gap-6">
+        <h1 className="max-w-4xl text-6xl font-bold tracking-tight md:text-7xl">
+          Hi, I’m Yousef Alkhunaizi.
+        </h1>
+
+        <p className="mt-6 max-w-2xl text-2xl text-zinc-400">
+          Electrical Engineering student at UCSD interested in embedded systems,
+          hardware design, and machine learning.
+        </p>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          <a
+            href="#projects"
+            className="rounded-full bg-white px-7 py-3 font-medium text-black transition hover:-translate-y-1 hover:bg-zinc-200"
+          >
+            View Projects
+          </a>
+
           <a
             href="/experience"
-            className="px-6 py-3 rounded-full bg-white text-black font-medium transition hover:scale-105 hover:bg-zinc-300"
+            className="rounded-full border border-zinc-700 px-7 py-3 font-medium text-white transition hover:-translate-y-1 hover:border-white"
           >
             Experience
           </a>
+        </div>
+      </section>
 
-          <a
-            href="#projects"
-            className="px-6 py-3 rounded-full border border-zinc-600 transition hover:border-white hover:scale-105"
-          >
-            Projects
-          </a>
+      <section id="projects" className="mx-auto max-w-6xl px-8 pb-28">
+        <div className="mb-12">
+          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-500">
+            Selected Work
+          </p>
+
+          <h2 className="text-4xl font-bold">Projects</h2>
         </div>
 
-        <section id="projects" className="mt-24">
-          <h2 className="text-4xl font-bold mb-8">
-            My Projects
-          </h2>
+        <div className="grid gap-6 md:grid-cols-3">
+          {projects.map((project) => (
+            <div
+              key={project.title}
+              className="group rounded-3xl border border-zinc-800 bg-zinc-950 p-7 transition duration-300 hover:-translate-y-2 hover:border-zinc-500 hover:bg-zinc-900"
+            >
+              <div className="mb-8 text-4xl transition duration-300 group-hover:scale-110">
+                {project.icon}
+              </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 transition hover:-translate-y-2 hover:border-white">
-              <div className="text-5xl mb-4">🚨</div>
-
-              <h3 className="text-xl font-semibold mb-3">
-                Fall Detection Device
+              <h3 className="mb-4 text-2xl font-semibold">
+                {project.title}
               </h3>
 
-              <p className="text-zinc-400">
-                Built a wearable fall-detection system using ESP32
-                and MPU6050 sensors.
+              <p className="leading-7 text-zinc-400">
+                {project.description}
+              </p>
+
+              <p className="mt-8 text-sm text-zinc-500 opacity-0 transition duration-300 group-hover:opacity-100">
+                Hover interaction: card lifts, icon grows, and details become emphasized.
               </p>
             </div>
-
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 transition hover:-translate-y-2 hover:border-white">
-              <div className="text-5xl mb-4">🤖</div>
-
-              <h3 className="text-xl font-semibold mb-3">
-                Line Following Robot
-              </h3>
-
-              <p className="text-zinc-400">
-                Designed and programmed a robot using sensors
-                and motor control logic.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6 transition hover:-translate-y-2 hover:border-white">
-              <div className="text-5xl mb-4">🔬</div>
-
-              <h3 className="text-xl font-semibold mb-3">
-                Capacitor Research
-              </h3>
-
-              <p className="text-zinc-400">
-                Created capacitor layouts and worked with
-                Voltera printing at UCSD Armor Lab.
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
