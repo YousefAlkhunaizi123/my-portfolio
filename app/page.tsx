@@ -1,117 +1,144 @@
 export default function Home() {
+  const experiences = [
+    {
+      role: "Researcher",
+      company: "Armor Lab at UCSD",
+      date: "July 2024 – August 2024",
+      details:
+        "Designed comb-shaped capacitor layouts, worked with Voltera printing, and supported sensor testing experiments.",
+    },
+    {
+      role: "Work Study Participant",
+      company: "Summer Engineering Institute",
+      date: "August 2022 – September 2024",
+      details:
+        "Gained hands-on experience with CAD, MATLAB, 3D printing, soldering, circuits, and engineering design tools.",
+    },
+  ];
+
   const projects = [
     {
-      icon: "⚡",
       title: "Fall Detection Device",
-      description:
-        "A wearable system using ESP32 and MPU6050 sensors to detect abnormal movement and possible falls.",
+      details:
+        "Built a wearable fall-detection system using ESP32 and MPU6050 sensors to detect abnormal motion.",
     },
     {
-      icon: "🤖",
       title: "Line-Following Robot",
-      description:
-        "A robot designed with sensors, motor control logic, and a 3D-printed chassis for stable line tracking.",
+      details:
+        "Designed and programmed a robot using light sensors, motor control logic, and a 3D-printed chassis.",
     },
     {
-      icon: "🔬",
       title: "Capacitor Research",
-      description:
-        "Comb-shaped capacitor layouts designed and printed using the Voltera printer at UCSD Armor Lab.",
+      details:
+        "Created capacitor layouts and worked with Voltera printing at UCSD Armor Lab.",
     },
   ];
 
   return (
-    <main className="min-h-screen bg-[#050505] text-white">
-      <nav className="fixed top-0 left-0 w-full border-b border-zinc-900 bg-black/70 backdrop-blur-xl">
-  <div className="mx-auto flex max-w-6xl items-center justify-between px-8 py-5">
-    
-    <h1 className="text-lg font-semibold tracking-wide">
-      Yousef
-    </h1>
+    <main className="min-h-screen bg-slate-950 text-slate-200">
+      <div className="mx-auto grid max-w-6xl gap-10 px-8 py-16 lg:grid-cols-2 lg:py-24">
+        <section className="lg:sticky lg:top-24 lg:h-fit">
+          <h1 className="text-5xl font-bold tracking-tight text-white">
+            Yousef Alkhunaizi
+          </h1>
 
-    <div className="flex gap-8 text-sm text-zinc-400">
-      <a href="#projects" className="hover:text-white transition">
-        Projects
-      </a>
+          <h2 className="mt-4 text-xl text-slate-300">
+            Electrical Engineering Student @ UCSD
+          </h2>
 
-      <a href="/experience" className="hover:text-white transition">
-        Experience
-      </a>
-
-      <a
-        href="mailto:yalkhunaizi@ucsd.edu"
-        className="hover:text-white transition"
-      >
-        Contact
-      </a>
-    </div>
-  </div>
-</nav>
-      <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-8 py-20">
-        <p className="mb-4 text-sm uppercase tracking-[0.35em] text-zinc-500">
-          Portfolio
-        </p>
-
-        <h1 className="max-w-4xl text-6xl font-bold tracking-tight md:text-7xl">
-        Hi, I'm Yousef Alkhunaizi.
-        </h1>
-
-        <p className="mt-6 max-w-2xl text-2xl text-zinc-400">
-          Electrical Engineering student at UCSD interested in embedded systems,
-          hardware design, and machine learning.
-        </p>
-
-        <div className="mt-10 flex flex-wrap gap-4">
-          <a
-            href="#projects"
-            className="rounded-full bg-white px-7 py-3 font-medium text-black transition hover:-translate-y-1 hover:bg-zinc-200"
-          >
-            View Projects
-          </a>
-
-          <a
-            href="/experience"
-            className="rounded-full border border-zinc-700 px-7 py-3 font-medium text-white transition hover:-translate-y-1 hover:border-white"
-          >
-            Experience
-          </a>
-        </div>
-      </section>
-
-      <section id="projects" className="mx-auto max-w-6xl px-8 pb-28">
-        <div className="mb-12">
-          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-zinc-500">
-            Selected Work
+          <p className="mt-6 max-w-md leading-7 text-slate-400">
+            I’m interested in embedded systems, hardware design, machine
+            learning, and building engineering projects that connect circuits,
+            software, and real-world problem solving.
           </p>
 
-          <h2 className="text-4xl font-bold">Projects</h2>
-        </div>
+          <nav className="mt-12 hidden flex-col gap-4 text-sm uppercase tracking-widest text-slate-500 lg:flex">
+            <a href="#about" className="transition hover:text-teal-300">
+              About
+            </a>
+            <a href="#experience" className="transition hover:text-teal-300">
+              Experience
+            </a>
+            <a href="#projects" className="transition hover:text-teal-300">
+              Projects
+            </a>
+          </nav>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="group rounded-3xl border border-zinc-800 bg-zinc-950 p-7 transition duration-300 hover:-translate-y-2 hover:border-zinc-500 hover:bg-zinc-900"
-            >
-              <div className="mb-8 text-4xl transition duration-300 group-hover:scale-110">
-                {project.icon}
-              </div>
+          <a
+            href="mailto:yalkhunaizi@ucsd.edu"
+            className="mt-10 inline-block rounded-full border border-slate-700 px-6 py-3 text-sm font-medium transition hover:border-teal-300 hover:text-teal-300"
+          >
+            Contact Me
+          </a>
+        </section>
 
-              <h3 className="mb-4 text-2xl font-semibold">
-                {project.title}
-              </h3>
+        <section className="space-y-24">
+          <section id="about">
+            <h2 className="mb-6 text-sm font-bold uppercase tracking-widest text-slate-400">
+              About
+            </h2>
 
-              <p className="leading-7 text-zinc-400">
-                {project.description}
-              </p>
+            <p className="leading-8 text-slate-400">
+              I am an Electrical Engineering student at UCSD with experience in
+              embedded systems, circuit design, CAD tools, and programming. I
+              enjoy projects where hardware and software work together, such as
+              sensors, microcontrollers, robotics, and machine learning systems.
+            </p>
+          </section>
 
-              <p className="mt-8 text-sm text-zinc-500 opacity-0 transition duration-300 group-hover:opacity-100">
-                Hover interaction: card lifts, icon grows, and details become emphasized.
-              </p>
+          <section id="experience">
+            <h2 className="mb-6 text-sm font-bold uppercase tracking-widest text-slate-400">
+              Experience
+            </h2>
+
+            <div className="space-y-4">
+              {experiences.map((item) => (
+                <div
+                  key={item.company}
+                  className="group rounded-xl p-5 transition hover:bg-slate-900/80"
+                >
+                  <p className="text-sm text-slate-500">{item.date}</p>
+
+                  <h3 className="mt-2 text-xl font-semibold text-white group-hover:text-teal-300">
+                    {item.role} · {item.company}
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-slate-400">
+                    {item.details}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
+
+          <section id="projects">
+            <h2 className="mb-6 text-sm font-bold uppercase tracking-widest text-slate-400">
+              Projects
+            </h2>
+
+            <div className="space-y-4">
+              {projects.map((project) => (
+                <div
+                  key={project.title}
+                  className="group rounded-xl border border-transparent p-5 transition hover:-translate-y-1 hover:border-slate-700 hover:bg-slate-900/80"
+                >
+                  <h3 className="text-xl font-semibold text-white group-hover:text-teal-300">
+                    {project.title}
+                  </h3>
+
+                  <p className="mt-3 leading-7 text-slate-400">
+                    {project.details}
+                  </p>
+
+                  <p className="mt-4 text-sm text-teal-300 opacity-0 transition group-hover:opacity-100">
+                    View project →
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </section>
+      </div>
     </main>
   );
 }
