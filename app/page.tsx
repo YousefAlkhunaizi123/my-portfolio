@@ -53,7 +53,7 @@ export default function Home() {
         </p>
 
         <h1 className="max-w-4xl text-6xl font-bold tracking-tight md:text-7xl">
-          Dania I love you.
+        Hi, I'm Yousef Alkhunaizi.
         </h1>
 
         <p className="mt-6 max-w-2xl text-2xl text-zinc-400">
